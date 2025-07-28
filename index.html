@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>HTML PRACTICE</h1>
+
+    <img
+      src="https://png.pngtree.com/background/20230526/original/pngtree-the-black-background-features-shiny-hex-tiles-picture-image_2741150.jpg"
+      alt="image"
+      style="height: 100px"
+    /><br /><br />
+    <audio controls src="./dont-talk-315229.mp3"></audio><br /><br />
+    <video controls src="./270940_tiny.mp4" height="200px"></video>
+    <p>
+      Lorem ipsum <b>dolor sit amet </b>consectetur adipisicing elit. Eligendi
+      neque itaque est aliquid sit sunt facere dolorem qui facilis maxime,
+      suscipit minima, quia quae similique?
+    </p>
+
+    <p>
+      Lorem ipsum <b><i>dolor sit amet</i></b> consectetur adipisicing elit.
+      Eligendi neque itaque est aliquid sit sunt facere dolorem qui facilis
+      maxime, suscipit minima, quia quae similique?
+    </p>
+
+    <p>
+      Lorem ipsum <b><sub>dolor sit amet</sub></b> consectetur adipisicing elit.
+      Eligendi neque itaque est aliquid sit sunt facere dolorem qui facilis
+      maxime, suscipit minima, quia quae similique?
+    </p>
+
+    <p>
+      Lorem ipsum <mark><sup>dolor sit amet</sup></mark> consectetur adipisicing
+      elit. Eligendi neque itaque est aliquid sit sunt facere dolorem qui
+      facilis maxime, suscipit minima, quia quae similique?
+    </p>
+
+    <ol type="a">
+      <li>item 1</li>
+      <li>item 2</li>
+      <li>item 3</li>
+      <li>item 4</li>
+    </ol>
+
+    <table style="background-color: black">
+      <tr style="background-color: white">
+        <th>Subject</th>
+        <th>DBMS</th>
+        <th>OOPS</th>
+        <th>Computer Networks</th>
+      </tr>
+      <tr style="background-color: white">
+        <th>Marks</th>
+        <td>8.5</td>
+        <td>10</td>
+        <td>8</td>
+      </tr>
+    </table>
+    <br /><br />
+
+    <button
+      onclick=changeText()
+      id="textChangeButton"
+      style="background-color: black; color: aqua; width: 75px; height: 30px"
+    >
+      click
+    </button>
+    <h1 id="test">Hello! Before clicking</h1>
+
+    <form  onsubmit=formSubmit(event)>
+        <label for="name">
+         Name:
+        </label>
+        <input type="text" class="f-n" id="name" placeholder="First Name" required>
+        <input type="text" class="l-n"  placeholder="Last Name" required><br><br>
+        <label for="email">Email:</label>
+        <input type="email" class="e-id" id="email" placeholder="example@gmail.com" required><br><br>
+        <label for="password">Password:</label>
+        <input type="password" class="pass" id="password" placeholder="1234@ertu" required><br><br>
+        <button
+        type="submit"
+        style="background-color: rgb(0, 0, 0); color: rgb(251, 245, 247); width: 75px; height: 30px"
+        >Submit</button>
+    </form>
+
+    <script>
+     changeText=()=>{
+        let temp = document.querySelector("#textChangeButton").innerText;
+        if (temp === "click") {
+          document.getElementById("test").innerHTML =
+            "Goodbye! After clicking.";
+          document.querySelector("#textChangeButton").innerText = "reset";
+        } else {
+          document.getElementById("test").innerHTML = "Hello! Before clicking";
+          document.querySelector("#textChangeButton").innerText = "click";
+        }
+      }
+
+      formSubmit=(event)=>{
+        event.preventDefault();
+        console.log(`Name is : ${document.querySelector(".f-n").value+" "+document.querySelector(".l-n").value}`);
+        document.querySelector(".f-n").value="";
+        document.querySelector(".l-n").value="";
+        console.log(`Email is : ${document.querySelector(".e-id").value}`);
+        document.querySelector(".e-id").value="";
+        console.log(`Name is : ${document.querySelector(".pass").value}`);
+        document.querySelector(".pass").value="";
+      }
+
+    </script>
+  </body>
+</html>
